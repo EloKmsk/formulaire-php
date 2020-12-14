@@ -16,7 +16,7 @@
             <label for="exampleInputEmail1"><strong>Adresse Email</strong></label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
                 {% if errors.email is defined %}
-                    <div class="invalid-feedback">
+                    <div class="is-invalid">
                     {{ errors.email }}
                     </div>
                 {% endif %}
@@ -25,7 +25,7 @@
             <label for="exampleFormControlTextarea1"><strong>Sujet</strong></label>
             <input class="form-control" type="text" name="subject" required>
                 {% if errors.subject is defined %}
-                    <div class="invalid-feedback">
+                    <div class="is-invalid">
                         {{ errors.subject }}
                     </div>
                 {% endif %}
@@ -34,7 +34,7 @@
             <label for="exampleFormControlTextarea1"><strong>Message</strong></label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message" required></textarea>
                 {% if errors.message is defined %}
-                    <div class="invalid-feedback">
+                    <div class="is-invalid">
                         {{ errors.message }}
                     </div>
                 {% endif %}

@@ -17,9 +17,22 @@ $twig = new Environment($loader, [
 
 $twig->addExtension(new DebugExtension());
 
+$formData = [
+    'email' => '',
+    'subject' => '',
+    'message' => '',
+];
+
 $errors = [];
 
 if ($_POST) {
+    foreach($formData as $key => $value) {
+        if(isset($_POST[$key])) {
+            $formData[$key]=$_POST[$key];
+        }
+    }
+
+
     $minLengthSubject = 3;
     $maxLengthSubject = 190;
 
@@ -49,4 +62,5 @@ if ($_POST) {
 
 echo $twig->render('contact.html.twig', [
     'errors' => $errors,
+    'formData' => $formData,
 ]);
